@@ -47,14 +47,14 @@ export default function Index() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className={[[styles.header], "grid grid-cols-7"].join(" ")}>
+    <div className={[[styles.header], ""].join(" ")}>
       <motion.div
         variants={variants}
         initial="open"
         animate={isActive ? "closed" : "open"}
         className="col-start-6"
       >
-        <div className="links flex gap-8 ">
+        <div className="links flex gap-8 mr-48">
           <a href="#">Home</a>
           <a href="#">Products</a>
           <a href="#">Info</a>

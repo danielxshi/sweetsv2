@@ -4,12 +4,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function Scroll() {
-
-    
-
-    useGSAP(() => {
-        gsap.to()
-    })
   return (
     <div className={style.scrollwrapper}>
       <section className={style.section}>
