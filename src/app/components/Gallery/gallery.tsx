@@ -33,7 +33,7 @@ export default function Home() {
   const [modal, setModal] = useState({active: false, index: 0})
 
   return (
-  <main className={[[styles.main], ""].join(" ")}>
+  <main className={[[styles.main], "z-10 w-screen h-screen absolute text-white"].join(" ")}>
     <div className={styles.body}>
       {
         projects.map( (project, index) => {
