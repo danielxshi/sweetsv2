@@ -3,13 +3,8 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 100px 50px 100px;
-    border-top: 1px solid rgb(201, 201, 201);
     cursor: pointer;
     transition: all 0.2s;
-}
-.project:last-of-type{
-    border-bottom: 1px solid rgb(201, 201, 201);
 }
 
 .project:hover{
@@ -25,7 +20,7 @@
 }
 
 .project h2{
-    font-size: 60px;
+    font-size: 30px;
     margin: 0px;
     font-weight: 400;
     transition: all 0.4s;
@@ -34,4 +29,60 @@
 .project p{
     transition: all 0.4s;
     font-weight: 300;
+}
+
+
+.scroll {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 300px;
+  margin: auto;
+  background-color: #d34444;
+  overflow: hidden;
+  z-index: 1;
+
+  .mscrolltitle {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transform: scale(2);
+    transition: all 1s ease;
+    & > div {
+      display: flex;
+      animation: scrollText 33s infinite linear;
+    }
+    h1 {
+      margin: 0;
+      font-size: 140px;
+      color: rgb(0, 0, 0);
+      transition: all 2s ease;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a:hover {
+      -webkit-text-stroke: 1px white;
+      color: transparent;
+    }
+  }
+}
+
+/*div:hover {
+  animation-play-state: paused;
+}*/
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

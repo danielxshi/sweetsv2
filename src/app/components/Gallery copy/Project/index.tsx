@@ -19,14 +19,8 @@ export default function index({ index, title, setModal }: Props) {
       }}
       className={styles.project}
     >
-      <div className={styles.scroll}>
-        <div className={styles.mscrolltitle}>
-          <div>
-            <h1 className="text-black">{title}</h1>
-            <h1 className="text-black">{title}</h1>
-          </div>
-        </div>
-      </div>{" "}
+      <h2>{title}</h2>
+      <p>Design & Development</p>
     </div>
   );
 }
