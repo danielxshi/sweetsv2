@@ -12,6 +12,7 @@ $yellow: yellow;
 
 body {
   font-family: "PP Neue Montreal";
+  text-transform: uppercase;
 }
 
 .hamburger {
@@ -183,7 +184,6 @@ nav > div {
   flex: 1;
 }
 
-
 .hamburger {
   display: flex;
   justify-content: flex-end;
@@ -272,10 +272,8 @@ footer {
 
 h1 {
   text-transform: uppercase;
-  font-family: "Timmons NY 2.005";
   font-size: 175px;
   font-weight: lighter;
-  color: white;
 }
 
 .project-title h1 span {
@@ -288,7 +286,7 @@ h1 {
   // right: 50px;
   .links {
     * {
-      color: white;
+      // color: white;
     }
   }
 }
@@ -379,5 +377,4 @@ h1 {
   footer {
     display: none;
   }
-
 }

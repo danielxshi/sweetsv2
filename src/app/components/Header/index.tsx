@@ -16,7 +16,7 @@ const menu = {
   },
   closed: {
     width: "100px",
-    height: "40px",
+    height: "28px",
     top: "0px",
     right: "0px",
     transition: {
@@ -55,10 +55,8 @@ export default function Index() {
         className="col-start-6"
       >
         <div className="links flex gap-8 mr-48">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">Info</a>
-          <a href="#">Contact</a>
+          <a className="text-xl" href="#">Home</a>
+          <a className="text-xl" href="#">Contact</a>
         </div>
       </motion.div>
 

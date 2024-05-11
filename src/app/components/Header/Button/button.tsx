@@ -41,8 +41,8 @@ export default function Button({ isActive, toggleMenu }: Props) {
 function PerspectiveText({ label }: Props) {
   return (
     <div className={styles.perspectiveText}>
-      <p>{label}</p>
-      <p>{label}</p>
+      <p className="text-xl">{label}</p>
+      <p className="text-xl">{label}</p>
     </div>
   );
 }

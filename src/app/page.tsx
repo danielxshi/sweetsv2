@@ -50,28 +50,28 @@ function App() {
 
   return (
     <div className="">
-      {/* <Landing /> */}
-      <Gallery />
+      <Landing />
 
       {/* <div className="contain ">
         <div className="preview-bg">
           <img src="/images/7.jpg" alt="" />
         </div>
       </div> */}
-      <div className="container mx-auto grid-cols-7 grid gap-8 grid-rows-7 max-h-[100vh]">
-        
-        {/* <div className="row-start-4 col-start-1 relative w-screen">
+      <div className=" w-[100vw] px-4 max-xl:container mx-auto grid-cols-13 grid gap-8 grid-rows-7 max-h-[100vh]">
+        <div className="row-start-6 col-span-full">
           <Gallery />
-        </div> */}
-
-        {/* <div className="py-6 intro col-start-1 md:col-span-3 col-span-5 leading-loose  text-white z-10">
-          <p className="text-2xl leading-loose">
-            SWEETS is a global creative company that brings brands, stories, and
-            experiences to life through art, design, and technology.
-          </p>
         </div>
 
-        <div className="col-start-5 col-end-8 relative py-6">
+        <div className="py-6 intro col-start-1 md:col-span-1 col-span-10 flex  z-10">
+          <p className="text-xl mr-4 ">SWEETS</p>
+        </div>
+
+        <div className="col-start-2 py-6 col-span-5  z-10">
+          <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
+          <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
+        </div>
+
+        <div className="col-start-9 col-end-14 row-start-1 pr-4 relative py-6">
           <nav className="z-10 flex ">
             <div className="hamburger">
               <Header />
@@ -79,7 +79,14 @@ function App() {
           </nav>
         </div>
 
-        <div className="row-start-2 row-span-3 col-start-1 col-span-full relative">
+        <div className="col-start-8 col-end-12 row-start-4 z-10">
+          <p className="text-xs z-10 flex leading-snug">
+            Lorem ipsum dolor sit, amet Aliquid unde quaerat quae eius, soluta
+            illo, quo natus quidem ea aspernatur, animi nulla.
+          </p>
+        </div>
+
+        {/* <div className="row-start-3 row-span-3   col-span-full relative">
           <div className="slider absolute">
             <div className="slider-content">
               <div className="slider-content-active project-title">
