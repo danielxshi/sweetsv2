@@ -2,9 +2,14 @@ import Card from "./card";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
+import Image from "next/image";
 
 interface Props {
   title?: string;
+  src?: string;
+  width?: any;
+  height?: any;
+  quality?: any;
 }
 
 export default function Home({ title }: Props) {
@@ -71,8 +76,18 @@ export default function Home({ title }: Props) {
       >
         {[...images, ...images].map((item, idx) => (
           // <Card image={`${item}`} key={idx} />
-          <div className="" key={idx}>
-            <h1 className="whitespace-nowrap	h-fit leading-extra-tight">{title}</h1>
+          <div className="flex row h-fit max-h-[20vh]" key={idx}>
+            <h1 className="whitespace-nowrap	h-fit leading-extra-tight">
+              {title}
+            </h1>
+            <div className="w-48 h-32 overflow-hidden">
+              <Image
+                alt="running bomberman"
+                width={50}
+                height={50}
+                src="/images/6.jpg"
+              ></Image>
+            </div>
           </div>
         ))}
       </motion.div>

@@ -7,6 +7,7 @@ import Landing from "./components/loading";
 import Button from "./components/Header/Button/button";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery/gallery";
+import Curve from "./components/Curve/index"
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -33,7 +34,7 @@ function App() {
       ease: "power3.out",
     });
     splitTextIntoSpans(".slider-content-active h1");
-    gsap.to(".slider-content-active p span", {
+    gsap.to(".slider-content-active h1 span", {
       delay: 5.5,
       duration: 1,
       stagger: 0.05,
@@ -49,7 +50,7 @@ function App() {
   });
 
   return (
-    <div className="">
+      <div>
       {/* <Landing /> */}
 
       {/* <div className="contain ">
@@ -57,24 +58,23 @@ function App() {
           <img src="/images/7.jpg" alt="" />
         </div>
       </div> */}
-      <div className=" max-w-[100vw] px-4 max-xl:container md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]">
+      <div className=" max-w-[100vw] px-4 md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]">
         <div className="row-start-6 col-span-full">
           <Gallery />
         </div>
 
-        <div className="py-6 intro col-start-1 md:col-span-2 col-span-10 flex row-start-1 z-10 relative">
-          
-        <div className="slider absolute">
+        <div className="py-6 intro col-start-1 md:col-span-1 col-span-10 flex row-start-1 z-10 rel">
+          <div className="slider absolute">
             <div className="slider-content">
               <div className="slider-content-active project-title">
-                <p className="text-xl uppercase">STUDIO</p>
+                <h1 className="text-xl uppercase">STUDIO</h1>
               </div>
             </div>
           </div>
-
+          {/* <p className="text-xl mr-4 ">SWEETS</p> */}
         </div>
 
-        <div className="col-start-3 py-6 col-span-5  z-10 hidden md:block">
+        <div className="col-start-3 md:col-start-2 py-6 col-span-5  z-10 hidden md:block">
           <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
           <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
         </div>
@@ -88,10 +88,10 @@ function App() {
         </div>
 
         <div className="md:col-start-8 md:col-end-12 md:row-start-4 row-start-3 col-start-1 col-end-12 z-10">
-          <p className="text-xs z-10 flex leading-snug">
+          <h1 className="text-xs z-10 flex leading-snug">
             Lorem ipsum dolor sit, amet Aliquid unde quaerat quae eius, soluta
             illo, quo natus quidem ea aspernatur, animi nulla.
-          </p>
+          </h1>
         </div>
 
         {/* <div className="row-start-3 row-span-3   col-span-full relative">
