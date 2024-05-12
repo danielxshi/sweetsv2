@@ -114,7 +114,7 @@ export default function index({ modal, projects }: Props) {
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        View
+        YOU'RE EARLY
       </motion.div>
     </>
   );

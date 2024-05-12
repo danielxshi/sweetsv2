@@ -50,7 +50,7 @@ function App() {
   });
 
   return (
-      <div>
+      <div  >
       {/* <Landing /> */}
 
       {/* <div className="contain ">
@@ -67,7 +67,7 @@ function App() {
           <div className="slider absolute">
             <div className="slider-content">
               <div className="slider-content-active project-title">
-                <h1 className="text-xl uppercase">STUDIO</h1>
+                <h1 className="text-xl font-normal uppercase">SW33TS</h1>
               </div>
             </div>
           </div>
@@ -75,8 +75,8 @@ function App() {
         </div>
 
         <div className="col-start-3 md:col-start-2 py-6 col-span-5  z-10 hidden md:block">
-          <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
-          <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
+          <p className="text-xl">BASED IN VANCOUVER </p>
+          <p className="text-xl">WEB DEVELOPMENT & MEDIA </p>
         </div>
 
         <div className="col-start-9 col-end-14 row-start-1 pr-4 relative py-6">

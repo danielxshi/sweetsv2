@@ -4,6 +4,7 @@
 
 $yellow: yellow;
 $black: black;
+$white: white;
 
 * {
   margin: 0;
@@ -14,7 +15,11 @@ $black: black;
 body {
   font-family: "PP Neue Montreal";
   text-transform: uppercase;
-  // background-color: $black;
+  background-color: $black;
+  color: $white !important;
+}
+a {
+  color: $white;
 }
 
 .hamburger {
@@ -277,6 +282,13 @@ h1 {
   font-size: 175px;
   font-weight: lighter;
 }
+a {
+  transition: all .2s ease;
+}
+
+a:hover {
+  color: #c9fd74 !important;
+}
 
 .project-title h1 span {
   top: -175px;
@@ -288,7 +300,7 @@ h1 {
   // right: 50px;
   .links {
     * {
-      // color: white;
+      color: $white;
     }
   }
 }
