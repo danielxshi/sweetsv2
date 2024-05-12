@@ -51,7 +51,7 @@ function App() {
 
   return (
       <div  >
-      {/* <Landing /> */}
+      <Landing />
 
       {/* <div className="contain ">
         <div className="preview-bg">
