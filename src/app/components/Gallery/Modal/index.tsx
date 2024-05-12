@@ -25,7 +25,7 @@ interface Props {
   projects?: any;
 }
 
-export default function index({ modal, projects }: Props) {
+export default function Index({ modal, projects }: Props) {
   const { active, index } = modal;
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -114,7 +114,7 @@ export default function index({ modal, projects }: Props) {
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        YOU'RE EARLY
+        YOU&apos;RE EARLY
       </motion.div>
     </>
   );
