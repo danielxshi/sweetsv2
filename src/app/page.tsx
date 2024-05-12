@@ -33,7 +33,7 @@ function App() {
       ease: "power3.out",
     });
     splitTextIntoSpans(".slider-content-active h1");
-    gsap.to(".slider-content-active h1 span", {
+    gsap.to(".slider-content-active p span", {
       delay: 5.5,
       duration: 1,
       stagger: 0.05,
@@ -50,23 +50,31 @@ function App() {
 
   return (
     <div className="">
-      <Landing />
+      {/* <Landing /> */}
 
       {/* <div className="contain ">
         <div className="preview-bg">
           <img src="/images/7.jpg" alt="" />
         </div>
       </div> */}
-      <div className=" w-[100vw] px-4 max-xl:container mx-auto grid-cols-13 grid gap-8 grid-rows-7 max-h-[100vh]">
+      <div className=" max-w-[100vw] px-4 max-xl:container md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]">
         <div className="row-start-6 col-span-full">
           <Gallery />
         </div>
 
-        <div className="py-6 intro col-start-1 md:col-span-1 col-span-10 flex  z-10">
-          <p className="text-xl mr-4 ">SWEETS</p>
+        <div className="py-6 intro col-start-1 md:col-span-2 col-span-10 flex row-start-1 z-10 relative">
+          
+        <div className="slider absolute">
+            <div className="slider-content">
+              <div className="slider-content-active project-title">
+                <p className="text-xl uppercase">STUDIO</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div className="col-start-2 py-6 col-span-5  z-10">
+        <div className="col-start-3 py-6 col-span-5  z-10 hidden md:block">
           <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
           <p className="text-xl">STUDIO IS A CREATIVE AGE </p>
         </div>
@@ -79,7 +87,7 @@ function App() {
           </nav>
         </div>
 
-        <div className="col-start-8 col-end-12 row-start-4 z-10">
+        <div className="md:col-start-8 md:col-end-12 md:row-start-4 row-start-3 col-start-1 col-end-12 z-10">
           <p className="text-xs z-10 flex leading-snug">
             Lorem ipsum dolor sit, amet Aliquid unde quaerat quae eius, soluta
             illo, quo natus quidem ea aspernatur, animi nulla.

@@ -8,7 +8,7 @@ import TextLink from "../Header/Button/link";
 
 const menu = {
   open: {
-    width: "480px",
+    width: "18rem",
     height: "650px",
     top: "-25px",
     right: "-25px",
