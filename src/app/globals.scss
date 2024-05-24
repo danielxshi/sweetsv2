@@ -17,11 +17,11 @@ body {
   text-transform: uppercase;
   background-color: $black;
   color: $white !important;
+  overflow-x: hidden;
 }
 a {
   color: $white;
 }
-
 .hamburger {
   position: relative;
   * {
@@ -283,7 +283,7 @@ h1 {
   font-weight: lighter;
 }
 a {
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {

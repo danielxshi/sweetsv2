@@ -1,16 +1,16 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import gsap from "gsap";
 import "./globals.scss";
 import { useGSAP } from "@gsap/react";
 import Landing from "./components/loading";
-import Button from "./components/Header/Button/button";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery/gallery";
-import Curve from "./components/Curve/index"
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
+  const [show, setShow] = useState(false);
 
   function splitTextIntoSpans(selector: any) {
     let elements = document.querySelectorAll(selector);
@@ -27,6 +27,9 @@ function App() {
   }
 
   useGSAP(() => {
+    gsap.from(".text-anim", {
+      opacity: 0,
+    });
     gsap.to(".slide-next-img", {
       delay: 5,
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -47,10 +50,14 @@ function App() {
       duration: 2,
       ease: "power3.out",
     });
+    gsap.to(".text-anim", {
+      delay: 5.5,
+      onComplete: () => setShow(true),
+    });
   });
 
   return (
-      <div  >
+    <>
       <Landing />
 
       {/* <div className="contain ">
@@ -58,43 +65,32 @@ function App() {
           <img src="/images/7.jpg" alt="" />
         </div>
       </div> */}
-      <div className=" max-w-[100vw] px-4 md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]">
-        <div className="row-start-6 col-span-full">
-          <Gallery />
-        </div>
+      {/* <div className=" max-w-[100vw] px-4 md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]"> */}
 
-        <div className="py-6 intro col-start-1 md:col-span-1 col-span-10 flex row-start-1 z-10 rel">
-          <div className="slider absolute">
-            <div className="slider-content">
-              <div className="slider-content-active project-title">
-                <h1 className="text-xl font-normal uppercase">SW33TS</h1>
-              </div>
-            </div>
-          </div>
-          {/* <p className="text-xl mr-4 ">SWEETS</p> */}
-        </div>
+      {show && (
+        <AnimatePresence>
+          {show && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.25, type: "ease", stiffness: 100 }}
 
-        <div className="col-start-3 md:col-start-2 py-6 col-span-3  z-10 hidden md:block">
-          <p className="text-xl">BASED IN VANCOUVER </p>
-          <p className="text-xl">WEB DEVELOPMENT + MEDIA </p>
-        </div>
+              className="text-anim row-start-6 col-span-full"
+            >
+              <Gallery />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+      <div className="md:col-start-8 md:col-end-12 md:row-start-4 row-start-3 col-start-1 col-end-12 z-10">
+        <h1 className="text-base z-10 flex leading-snug">
+          creative development agency based in vancouver. Providing custom coded
+          websites, custom designed websites, marketing, branding and website
+          maintenance.
+        </h1>
+      </div>
 
-        <div className="col-start-9 col-end-14 row-start-1 pr-4 relative py-6">
-          <nav className="z-10 flex ">
-            <div className="hamburger">
-              <Header />
-            </div>{" "}
-          </nav>
-        </div>
-
-        <div className="md:col-start-8 md:col-end-12 md:row-start-4 row-start-3 col-start-1 col-end-12 z-10">
-          <h1 className="text-xs z-10 flex leading-snug">
-            Lorem ipsum dolor sit, amet Aliquid unde quaerat quae eius, soluta
-            illo, quo natus quidem ea aspernatur, animi nulla.
-          </h1>
-        </div>
-
-        {/* <div className="row-start-3 row-span-3   col-span-full relative">
+      {/* <div className="row-start-3 row-span-3   col-span-full relative">
           <div className="slider absolute">
             <div className="slider-content">
               <div className="slider-content-active project-title">
@@ -111,8 +107,8 @@ function App() {
             <p className="text-white">Launching Soon</p>
           </footer>
         </div> */}
-      </div>
-    </div>
+    </>
+    // </div>
   );
 }
 

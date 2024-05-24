@@ -5,6 +5,7 @@ import Button from "./Button/button";
 import styles from "./style.module.scss";
 import Nav from "./Nav/nav";
 import TextLink from "../Header/Button/link";
+import Link from "next/link";
 
 const menu = {
   open: {
@@ -55,8 +56,8 @@ export default function Index() {
         className="col-start-6"
       >
         <div className="links flex gap-8 mr-48">
-          <a className="text-xl" href="#">Home</a>
-          <a className="text-xl" href="#">Contact</a>
+          <Link className="text-xl" href="/">Home</Link>
+          <Link className="text-xl" href="/contact">Projects</Link>
         </div>
       </motion.div>
 

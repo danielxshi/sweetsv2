@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
   <main className={[[styles.main], "z-10"].join(" ")}>
-    <div className={styles.body}>
+    <div className={[[styles.body], ""].join(" ")}>
       {
         projects.map( (project, index) => {
           return <Project index={index} title={project.title} setModal={setModal} key={index}/>

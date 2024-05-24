@@ -122,7 +122,7 @@ export default function Loader() {
     { scope: knot }
   ); // <-- scope is f
   return (
-    <div className="w-full">
+    <div className="w-screen max-w-[100vw] absolute left-0 m-0 p-0">
       {show && (
         <div ref={knot} className="loader">
           {/* <footer>
