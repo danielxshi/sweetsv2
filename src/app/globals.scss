@@ -286,21 +286,20 @@ a {
   transition: all 0.2s ease;
 }
 
-a:hover {
-  color: #c9fd74 !important;
-}
-
 .project-title h1 span {
   top: -175px;
   position: relative;
 }
 
 .hamburger {
-  // position: fixed;
-  // right: 50px;
   .links {
     * {
       color: $white;
+    }
+  }
+  .links {
+    a:hover{
+      color: $yellow;
     }
   }
 }

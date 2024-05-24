@@ -16,7 +16,9 @@ export default function Navbar() {
 
       <div className="col-start-3 md:col-start-2 py-6 col-span-3  z-10 hidden md:block">
         <p className="text-xl">WEB DEVELOPMENT + MEDIA</p>
-        <Link href="mailto:danielxshi@hotmail.com" className="text-xl">danielxshi@hotmail.com</Link>
+        <Link href="mailto:danielxshi@hotmail.com" className="text-xl links">
+          danielxshi@hotmail.com
+        </Link>
       </div>
 
       <div className="col-start-9 col-end-14 row-start-1 pr-4 relative py-6">

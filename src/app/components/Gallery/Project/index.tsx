@@ -7,9 +7,11 @@ interface Props {
   index?: any;
   title?: any;
   setModal?: any;
+  src?: string;
+  url?: string;
 }
 
-export default function index({ index, title, setModal }: Props) {
+export default function index({ index, title, setModal, src, url }: Props) {
   return (
     <div
       onMouseEnter={() => {
@@ -18,9 +20,9 @@ export default function index({ index, title, setModal }: Props) {
       onMouseLeave={() => {
         setModal({ active: false, index });
       }}
-      className={styles.project}
+      className={[[styles.project], ""].join("")}
     >
-      <Scroller title={title} />
+      <Scroller src={src} title={title} url={url} />
     </div>
   );
 }

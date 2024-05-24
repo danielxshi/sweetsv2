@@ -34,11 +34,12 @@ export default function index({ children }: Props) {
           );
         })}
       </div>
-      <motion.div className={styles.footer}>
+      {/* <motion.div className={styles.footer}>
         {footerLinks.map((link, i) => {
           const { title, href } = link;
           return (
             <motion.a
+              className="menu-footer-links"
               variants={slideIn}
               custom={i}
               initial="initial"
@@ -51,7 +52,7 @@ export default function index({ children }: Props) {
             </motion.a>
           );
         })}
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

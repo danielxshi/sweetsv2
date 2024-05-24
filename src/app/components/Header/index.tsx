@@ -62,7 +62,7 @@ export default function Index() {
       </motion.div>
 
       <motion.div
-        className={styles.menu}
+        className={[[styles.menu], [styles.links]].join("")}
         variants={menu}
         animate={isActive ? "open" : "closed"}
         initial="closed"

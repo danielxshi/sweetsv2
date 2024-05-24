@@ -78,7 +78,7 @@ export default function Index({ modal, projects }: Props) {
         variants={scaleAnimation}
         initial="initial"
         animate={active ? "enter" : "closed"}
-        className={[[styles.modalContainer]].join(" ")}
+        className={[[styles.modalContainer], "rounded-md"].join(" ")}
       >
         <div style={{ top: index * -100 + "%" }} className={styles.modalSlider}>
           {projects.map((project: { src: any; color: any; }, index: any) => {

@@ -3,6 +3,7 @@ import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   title?: string;
@@ -10,9 +11,10 @@ interface Props {
   width?: any;
   height?: any;
   quality?: any;
+  url: string | "";
 }
 
-export default function Home({ title }: Props) {
+export default function Home({ title, src, url }: Props) {
   const images = [
     "/image-1.jpg",
     "/image-2.jpg",
@@ -22,8 +24,8 @@ export default function Home({ title }: Props) {
     "/image-6.jpg",
     "/image-7.jpg",
   ];
-  const FAST_DURATION = 150;
-  const SLOW_DURATION = 200;
+  const FAST_DURATION = 220;
+  const SLOW_DURATION = 250;
 
   const [duration, setDuration] = useState(FAST_DURATION);
   let [ref, { width }] = useMeasure();
@@ -77,16 +79,20 @@ export default function Home({ title }: Props) {
         {[...images, ...images].map((item, idx) => (
           // <Card image={`${item}`} key={idx} />
           <div className="flex row h-fit max-h-[20vh]" key={idx}>
-            <h1 className="whitespace-nowrap	h-fit leading-extra-tight">
-              {title}
-            </h1>
+            <Link
+              href={url}
+              className="text-[140px] leading-none whitespace-nowrap opacity-80 h-fit"
+            >
+              {title} &nbsp;
+            </Link>
             <div className="w-48 h-32 overflow-hidden">
-              <Image
+              {/* <Image
                 alt="running bomberman"
                 width={50}
                 height={50}
                 src="/images/6.jpg"
-              ></Image>
+              ></Image> */}
+              <img src={src} alt="Lofi GIF" />
             </div>
           </div>
         ))}
