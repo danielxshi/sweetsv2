@@ -8,7 +8,7 @@ interface Props {
   title?: any;
   setModal?: any;
   src?: string;
-  url?: string;
+  url?: any;
 }
 
 export default function index({ index, title, setModal, src, url }: Props) {

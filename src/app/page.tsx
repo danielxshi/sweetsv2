@@ -7,10 +7,12 @@ import Landing from "./components/loading";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery/gallery";
 import { AnimatePresence, motion } from "framer-motion";
+import Footer from "./components/Footer/footer";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
   const [show, setShow] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
 
   function splitTextIntoSpans(selector: any) {
     let elements = document.querySelectorAll(selector);
@@ -54,18 +56,15 @@ function App() {
       delay: 5.5,
       onComplete: () => setShow(true),
     });
+    gsap.to(".text-anim", {
+      delay: 6.75,
+      onComplete: () => setShowFooter(true),
+    });
   });
 
   return (
     <>
       <Landing />
-
-      {/* <div className="contain ">
-        <div className="preview-bg">
-          <img src="/images/7.jpg" alt="" />
-        </div>
-      </div> */}
-      {/* <div className=" max-w-[100vw] px-4 md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]"> */}
 
       {show && (
         <AnimatePresence>
@@ -74,41 +73,26 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.25, type: "ease", stiffness: 100 }}
-
               className="text-anim row-start-6 col-span-full"
             >
               <Gallery />
+              {/* {showFooter && (
+                <div className="pt-[10vh] grid grid-cols-13">
+                  <Footer />
+                </div>
+              )} */}
             </motion.div>
           )}
         </AnimatePresence>
       )}
       <div className="md:col-start-8 md:col-end-12 md:row-start-4 row-start-3 col-start-1 col-end-12 z-10">
-        <h1 className="text-base z-10 flex leading-snug">
+        <h1 className="text-lg z-10 flex leading-relaxed">
           creative development agency based in vancouver. Providing custom coded
           websites, custom designed websites, marketing, branding and website
           maintenance.
         </h1>
       </div>
-
-      {/* <div className="row-start-3 row-span-3   col-span-full relative">
-          <div className="slider absolute">
-            <div className="slider-content">
-              <div className="slider-content-active project-title">
-                <h1 className="text-3xl uppercase">STUDIO</h1>
-              </div>
-            </div>
-          </div>
-
-          <p className="col-span-3 uppercase absolute bottom-0 p-8 text-white ml-48">
-            a creative production agency
-          </p>
-
-          <footer className="col-span-3 col-start-7">
-            <p className="text-white">Launching Soon</p>
-          </footer>
-        </div> */}
     </>
-    // </div>
   );
 }
 

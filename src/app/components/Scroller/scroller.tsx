@@ -24,8 +24,8 @@ export default function Home({ title, src, url }: Props) {
     "/image-6.jpg",
     "/image-7.jpg",
   ];
-  const FAST_DURATION = 220;
-  const SLOW_DURATION = 250;
+  const FAST_DURATION = 420;
+  const SLOW_DURATION = 450;
 
   const [duration, setDuration] = useState(FAST_DURATION);
   let [ref, { width }] = useMeasure();
@@ -78,21 +78,23 @@ export default function Home({ title, src, url }: Props) {
       >
         {[...images, ...images].map((item, idx) => (
           // <Card image={`${item}`} key={idx} />
-          <div className="flex row h-fit max-h-[20vh]" key={idx}>
+          <div className="flex row h-fit " key={idx}>
             <Link
               href={url}
-              className="text-[140px] leading-none whitespace-nowrap opacity-80 h-fit"
+              className="md:text-[340px] text-[180px] leading-none whitespace-nowrap  h-fit"
             >
               {title} &nbsp;
             </Link>
-            <div className="w-48 h-32 overflow-hidden">
+            <div className="md:w-96 md:h-64 w-48 h-32 flex align-middle items-center m-auto">
               {/* <Image
                 alt="running bomberman"
                 width={50}
                 height={50}
                 src="/images/6.jpg"
               ></Image> */}
-              <img src={src} alt="Lofi GIF" />
+              <div className="m-auto flex h-full align-baseline items-baseline">
+                <img className="flex m-auto" src={src} alt="Lofi GIF" />
+              </div>
             </div>
           </div>
         ))}

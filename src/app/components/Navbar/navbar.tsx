@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className="slider absolute">
           <div className="slider-content">
             <div className="slider-content-active project-title">
-              <h1 className="text-xl font-normal uppercase">SW33TS</h1>
+              <h1 className="text-xl font-normal uppercase">SWEETS</h1>
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@ export default function index({ children }: Props) {
           );
         })}
       </div>
-      {/* <motion.div className={styles.footer}>
+      <motion.div className={styles.footer}>
         {footerLinks.map((link, i) => {
           const { title, href } = link;
           return (
@@ -47,12 +47,13 @@ export default function index({ children }: Props) {
               exit="exit"
               key={`f_${i}`}
               href={href}
+              target="_blank"
             >
               {title}
             </motion.a>
           );
         })}
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }

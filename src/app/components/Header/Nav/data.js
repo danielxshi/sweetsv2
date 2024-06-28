@@ -22,20 +22,16 @@ export const links = [
 ]
 
 export const footerLinks = [
-    {
-        title: "Facebook",
-        href: "/"
-    },
-    {
-        title: "LinkedIn",
-        href: "/"
-    },
+    // {
+    //     title: "Facebook",
+    //     href: "/"
+    // },
+    // {
+    //     title: "LinkedIn",
+    //     href: "/"
+    // },
     {
         title: "Instagram",
-        href: "/"
+        href: "https://www.instagram.com/studiobysweets/"
     },
-    {
-        title: "Twitter",
-        href: "/"
-    }
 ]
