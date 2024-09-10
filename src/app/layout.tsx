@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pragati.className}`}>
-        <div className="min-h-[100vh] max-w-[100vw] px-4 md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]">
+        <div className="min-h-[100vh] max-w-[100vw] md:mx-auto grid-cols-13 grid gap-4 md:gap-8 grid-rows-7 max-h-[100vh]">
           <Navbar/>
           {children}
         </div>
