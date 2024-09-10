@@ -2,88 +2,26 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
-// import React from "react";
 import styles from "../styles/modules/_landing.module.scss";
 import Image from "next/image";
 import bg from "../../../public/images/7.jpg";
 import { CustomEase } from "gsap/CustomEase";
+import localFont from "next/font/local";
+import test from "../fonts/PragatiNarrow-Bold.ttf";
 
-// function revealLandingPage() {
-//   gsap.to(".hero", {
-//     clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-//     duration: 2,
-//     ease: "hop",
-//     onStart: () => {
-//       gsap.to(".hero", {
-//         transform: "translate(-50%, -50%) scale(1)",
-//         duration: 2.25,
-//         ease: "power3.inOut",
-//         delay: 0.25,
-//       });
-//       gsap.to(".overlay", {
-//         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-//         duration: 2,
-//         delay: 0.5,
-//         ease: "hop",
-//       });
-
-//       gsap.to(".hero-img img", {
-//         transform: "scale(1)",
-//         duration: 2.25,
-//         ease: "power3.inOut",
-//         delay: 0.25,
-//       });
-
-//       gsap.to(".header h1 span", {
-//         y: 0,
-//         stagger: 0.1,
-//         duration: 2,
-//         ease: "power4.inOut",
-//         delay: 0.75,
-//       });
-//     },
-//   });
-// }
+const pragati = localFont({
+  src: [
+    {
+      path: "../fonts/Dinamit_Bold_Trial_A.ttf",
+      // path: "../fonts/PragatiNarrow-Bold.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
 
 export default function Loader() {
   const [show, setShow] = useState(true);
-
-  // function animateCounter() {
-  //   const counterElement =
-  //     document.querySelector<HTMLParagraphElement>(".counter p");
-  //   let currentValue = 0;
-  //   const updateInterval = 300;
-  //   const maxDuration = 2000;
-  //   const endValue = 100;
-  //   const startTime = Date.now();
-
-  //   function updateCounter() {
-  //     const elapsedTime = Date.now() - startTime;
-  //     if (elapsedTime < maxDuration) {
-  //       currentValue = Math.min(
-  //         currentValue + Math.floor(Math.random() * 30) + 5,
-  //         endValue
-  //       );
-  //       if (counterElement)
-  //         counterElement.textContent = currentValue.toString();
-  //       setTimeout(updateCounter, updateInterval);
-  //     } else {
-  //       if (counterElement)
-  //         counterElement.textContent = currentValue.toString();
-  //       setTimeout(() => {
-  //         gsap.to(counterElement, {
-  //           y: -20,
-  //           duration: 1,
-  //           ease: "power3.inOut",
-  //           onStart: () => {
-  //             revealLandingPage();
-  //           },
-  //         });
-  //       }, -500);
-  //     }
-  //   }
-  //   updateCounter();
-  // }
 
   function splitTextIntoSpans(selector: any) {
     let elements = document.querySelectorAll(selector);
@@ -92,7 +30,9 @@ export default function Loader() {
       let splitText = text
         .split("")
         .map(function (char: string) {
-          return `<span>${char === " " ? "&nbsp;&nbsp;" : char}</span>`;
+          return `<span className="text-center mx-auto">${
+            char === " " ? "&nbsp;&nbsp;" : char
+          }</span>`;
         })
         .join("");
       element.innerHTML = splitText;
@@ -100,58 +40,67 @@ export default function Loader() {
   }
 
   useGSAP(() => {
+    splitTextIntoSpans(".header h1");
+
     const tl = gsap.timeline({});
     tl.to(".hero", {
-      clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-      duration: 2,
-      ease: "hop",
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%) ",
+      duration: 0.35,
+      ease: "expoScale(0.5,7, none)",
     });
-    tl.to(".hero", {
-      transform: "translate(-50%, -50%) scale(1)",
-      duration: 2.25,
-      ease: "power3.inOut",
-      delay: 0.25,
-    });
-    tl.to(".overlay", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      duration: 2,
-      delay: 0.5,
-      ease: "hop",
-    });
-
-    tl.to(".hero-img img", {
-      transform: "scale(1)",
-      duration: 2.25,
-      ease: "power3.inOut",
-      delay: 0.25,
-    });
-    splitTextIntoSpans(".header h1");
 
     tl.to(".header h1 span", {
       y: 0,
-      stagger: 0.1,
-      duration: 2,
-      ease: "power4.inOut",
-      delay: 0.75,
+      stagger: 0.05,
+      duration: 0.5,
+      ease: CustomEase.create(
+        "custom",
+        "M0,0 C0.126,0.382 0.204,0.59 0.362,0.738 0.554,0.918 0.61,0.963 1,1 "
+      ),
+    });
+
+    tl.to(".overlay", {
+      width: "100%",
+      duration: .7,
+      ease: CustomEase.create(
+        "custom",
+        "M0,0 C0.126,0.382 0.204,0.59 0.362,0.738 0.554,0.918 0.61,0.963 1,1 "
+      ),
+      delay: ".1",
+
+    });
+
+    tl.to(".overlay", {
+      background: "#fff,",
+      opacity: "1",
+      transform: "translate(0%, 0%) scale(1)",
+      duration: .8,
+      ease: CustomEase.create(
+        "custom",
+        "M0,0 C0.126,0.382 0.204,0.59 0.362,0.738 0.554,0.918 0.61,0.963 1,1 "
+      ),
+
+      delay: ".1",
+
+      onComplete: () => setShow(false),
     });
   }); // <-- scope is f
   return (
-    <div className="landing-container">
-      <div className="counter">
-        <p>0</p>
-      </div>
+    <div className="landing-container ">
+      {show && (
+        <section className="hero ">
+          <div className="overlay shadow-lg opacity-50"></div>
 
-      <section className="hero">
-        <div className="overlay"></div>
+          <div className="header flex flex-col space-x-8 align-middle justify-center *:text-center *:mx-auto">
+            <h1 className={`${pragati.className} lowercase`}>sweets</h1>
+            <h1 className="*:text-3xl tracking-wider sub-height">los angeles</h1>
+          </div>
 
-        <div className="header">
-          <h1>sweets</h1>
-        </div>
-
-        <div className="hero-img">
+          {/* <div className="hero-img">
           <Image src={bg} alt="" />
-        </div>
-      </section>
+        </div> */}
+        </section>
+      )}
     </div>
   );
 }

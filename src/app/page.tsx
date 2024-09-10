@@ -15,14 +15,14 @@ function App() {
     <>
       <Landing />
 
-      {/* <div className="h-screen w-screen absolute z-[1]"> */}
-        {/*       
-        <Spline
+      <div className="h-screen w-screen absolute z-[1]">
+
+        {/* <Spline
           scene="https://prod.spline.design/i7cKsU5q6nT3n195/scene.splinecode"
           // width={1920}
           // height={1080}
-        />{" "} */}
-      {/* </div> */}
+        />{" "}  */}
+      </div>
     </>
   );
 }
